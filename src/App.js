@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import {Provider, useSelector} from "react-redux";
+import {postsSelector} from "./store/selector";
+import store from "./store";
+
+import {Post} from "./components/post/Post";
+import {Form} from "./components/form/Form";
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <Form/>
+            <PostsList/>
+        </Provider>
+    );
 }
 
 export default App;
+
+const PostsList = () => {
+    const posts = useSelector(postsSelector);
+
+    return (
+        posts.map(item => (
+            <Post key={item.id} id={item.id}/>
+        ))
+    )
+}
