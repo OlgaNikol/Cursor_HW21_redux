@@ -4,11 +4,11 @@ const initialState = {
             id: 0,
             author: {
                 name: "Nadine Yousif",
-                photo: "./Cursor_HW21_redux/images/avatar.jpg",
+                photo: "./images/avatar.jpg",
                 nickname: "@nadin_yus"
             },
             content: "A self-taught photographer has come face-to-face with a kestrel swooping towards him.",
-            image: "./Cursor_HW21_redux/images/bird.png.webp",
+            image: "./images/bird.png.webp",
             date: "Mon Aug 01 2023",
             likes: 120,
             comments: 10,
@@ -18,13 +18,13 @@ const initialState = {
             id: 1,
             author: {
                 name: "Nadine Yousif",
-                photo: "./Cursor_HW21_redux/images/avatar.jpg",
+                photo: "./images/avatar.jpg",
                 nickname: "@nadin_yus"
             },
             content: "For Nubian Ibexes, the high-altitude rocky terrains are home.\n" +
                 "\n" +
                 "Displays of dominance begin with showing off their impressive horns, captured in this shot by Amit Eshel in the Zin Desert, Israel.",
-            image: "./Cursor_HW21_redux/images/ibexes.jpg.webp",
+            image: "./images/ibexes.jpg.webp",
             date: "Wed Aug 12 2023",
             likes: 56,
             comments: 16,
@@ -41,7 +41,7 @@ export const reducer = (state = initialState, action) => {
                     id: state.posts.length,
                     author: {
                         name: action.payload.author,
-                        photo: "./Cursor_HW21_redux/images/avatar_plug.jpg",
+                        photo: "./images/avatar_plug.jpg",
                         nickname: ""
                     },
                     content: action.payload.text,
