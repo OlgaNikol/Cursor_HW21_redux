@@ -15,6 +15,8 @@ export const Post = ({ id }) => {
 
     const {author, content, image, date, likes, comments, reposts} = post;
 
+    console.log('image', image);
+
     const [stateLikesClicked, setLikesClicked] = useState(false);
     const [stateCommentsClicked, setCommentsClicked] = useState(false);
     const [stateRepostsClicked, setRepostsClicked] = useState(false);
