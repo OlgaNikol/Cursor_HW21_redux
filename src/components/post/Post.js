@@ -3,7 +3,6 @@ import like from '../../assets/icons/heart.png'
 import comment from '../../assets/icons/comment.png'
 import repost from '../../assets/icons/repost.png'
 
-//import {selectPostById} from "../../store/selector";
 import {useSelector, useDispatch} from "react-redux";
 import {useState} from "react";
 
@@ -14,8 +13,6 @@ export const Post = ({ id }) => {
         state.posts.find(post => post.id === id));
 
     const {author, content, image, date, likes, comments, reposts} = post;
-
-    console.log('image', image);
 
     const [stateLikesClicked, setLikesClicked] = useState(false);
     const [stateCommentsClicked, setCommentsClicked] = useState(false);
